@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <title>
+        Watch It Move
+    </title>
+    <meta content="Watch It Move" property="og:title" />
+    <meta content="We discover the appearance and structure of articulated objects by just watching them move from different points of view. We make no assumption about the type of object." name="description" property="og:description" />
+    <meta content="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/img/stylegan3-teaser-1920x1006.png" property="og:image" />
+    <meta content="https://nvlabs.github.io/stylegan3" property="og:url" />
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet" />
+    <link as="image" href="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/img/paper-pdf-512.png" rel="preload" />
+    <link as="image" href="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/img/stylegan3-teaser-1920x1006.png" rel="preload" />
+</head>
+
+<body>
+    <div class="n-header">
+    </div>
+    <div class="n-title">
+        <h1>
+            Watch It Move: Unsupervised Discovery of 3D Joints for Re-Posing of Articulated Objects
+        </h1>
+    </div>
+    <div class="n-byline">
+        <div class="byline">
+            <ul class="authors">
+                <li>
+                    Atsuhiro Noguchi<sup>1, 2</sup>
+                </li>
+                <li>
+                    Umar Iqbal<sup>1</sup>
+                </li>
+                <li>
+                    Jonathan Tremblay<sup>1</sup>
+                </li>
+                <li>
+                    Tatsuya Harada<sup>2, 3</sup>
+                </li>
+                <li>
+                    Orazio Gallo<sup>1</sup>
+                </li>
+            </ul>
+            <ul class="authors affiliations">
+                <li>
+                    <sup>
+                        1
+                    </sup>
+                    NVIDIA
+                </li>
+                <li>
+                    <sup>
+                        2
+                    </sup>
+                    The University of Tokyo
+                </li>
+                <li>
+                    <sup>
+                        3
+                    </sup>
+                    RIKEN
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="n-article">
+        <div class="n-page video">
+            <video class="centered" width="100%" autoplay muted loop>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/teaser.mp4#t=0.001" type="video/mp4" />
+            </video>
+            <div class="videocaption">
+                <div>
+                    We learn to reconstruct the appearance of an articulated, moving object by "watching" it
+                    move in a multi-view video sequence and associated foreground masks, as shown in the animation in
+                    (a). Simultaneously, we discover the object's parts and joints with <b>no additional supervision</b>
+                    as shown in (b). The learned structure can be used to <b>explicitly</b> re-pose the object, by
+                    roto-translating each part around its joint as shown in (c).
+                </div>
+            </div>
+        </div>
+
+        <h2 id="abstract">
+            Abstract
+        </h2>
+        <p>
+            Rendering articulated objects while controlling their poses is critical to applications such as
+            virtual reality or animation for movies.
+            Manipulating the pose of an object, however, requires the understanding of its underlying structure,
+            that is, its joints and how they interact with each other.
+            Unfortunately, assuming the structure to be known, as existing methods do, precludes the ability to
+            work on new object categories.
+            We propose to learn both the appearance and the structure of previously unseen articulated objects
+            by observing them move from multiple views, <b>with no additional supervision</b>, such as joints
+            annotations, or information about the structure.
+            Our insight is that adjacent parts that move relative to each other must be connected by a joint.
+            To leverage this observation, we model the object parts in 3D as ellipsoids, which allows us to
+            identify joints.
+            We combine this explicit representation with an implicit one that compensates for the approximation
+            introduced.
+            We show that our method works for different structures, from quadrupeds, to single-arm robots, to
+            humans.
+        </p>
+        <h2 id="links">
+            Links
+        </h2>
+        <div class="grid download-section">
+            <div class="download-thumb">
+                <a href="https://nvlabs-fi-cdn.nvidia.com/stylegan3/stylegan3-paper.pdf">
+                    <img class="dropshadow" src="assets/paper_preview.png" height=512 />
+                </a>
+            </div>
+            <div class="download-links">
+                <ul>
+                    <li>
+                        <a href="https://arxiv.org/abs/xxxx.xxxx">
+                            arXiv preprint
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/NVlabs/watch-it-move">
+                            Code available soon.
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h2 id="Video">
+            Video
+        </h2>
+
+        <div>[Link to Youtube video will be here.]</div>
+
+        <!-- <video class="centered" width="100%" autoplay muted loop> -->
+        <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+        <!-- <source src="assets/video.mp4" type="video/mp4" /> -->
+        <!-- </video> -->
+        <h2 id="citation">
+            Citation
+        </h2>
+        <pre><code>@article{noguchi2021watch,
+            title={Watch It Move: {U}nsupervised Discovery of {3D} Joints for Re-Posing of Articulated Objects},
+            author={Noguchi, Atsuhiro and Iqbal, Umar and Tremblay, Jonathan and Harada, Tatsuya and Gallo, Orazio},
+            journal={arXiv preprint arXiv:xxxx.xxxx},
+            year={2021}
+}</code></pre>
+
+        <h2 id="acknowledgments">
+        </h2>
+    </div>
+    <!-- <div class="n-footer">
+    </div> -->
+    <center>
+        <p>
+            We adapted the template for this website from <a href="https://nvlabs.github.io/stylegan3/">StyleGAN3</a>.
+        </p>
+    </center>
+</body>
+
+</html>
