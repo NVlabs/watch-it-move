@@ -10,13 +10,10 @@
     </title>
     <meta content="Watch It Move" property="og:title" />
     <meta content="We discover the appearance and structure of articulated objects by just watching them move from different points of view. We make no assumption about the type of object." name="description" property="og:description" />
-    <meta content="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/img/stylegan3-teaser-1920x1006.png" property="og:image" />
-    <meta content="https://nvlabs.github.io/stylegan3" property="og:url" />
+    <meta content="https://nvlabs.github.io/whatch-it-move" property="og:url" />
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet" />
-    <link as="image" href="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/img/paper-pdf-512.png" rel="preload" />
-    <link as="image" href="https://nvlabs-fi-cdn.nvidia.com/_web/stylegan3/img/stylegan3-teaser-1920x1006.png" rel="preload" />
 </head>
 
 <body>
@@ -112,19 +109,19 @@
         </h2>
         <div class="grid download-section">
             <div class="download-thumb">
-                <a href="https://nvlabs-fi-cdn.nvidia.com/stylegan3/stylegan3-paper.pdf">
+                <a href="https://arxiv.org/pdf/2112.11347.pdf" target="_blank">
                     <img class="dropshadow" src="assets/paper_preview.png" height=512 />
                 </a>
             </div>
             <div class="download-links">
                 <ul>
                     <li>
-                        <a href="https://arxiv.org/abs/xxxx.xxxx">
+                        <a href="https://arxiv.org/abs/2112.11347" target="_blank">
                             arXiv preprint
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/NVlabs/watch-it-move">
+                        <a href="https://github.com/NVlabs/watch-it-move" target="_blank">
                             Code available soon.
                         </a>
                     </li>
@@ -132,15 +129,60 @@
             </div>
         </div>
         <h2 id="Video">
-            Video
+            Teaser Video
         </h2>
+        <p text-align="center">
+            <iframe width="705" height="397" border-style=none src="https://www.youtube.com/embed/oRnnuCVV89o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
 
-        <div>[Link to Youtube video will be here.]</div>
+        <h2 id="results">
+            Results
+        </h2>
+        <h3 id="reconstruction">
+            Reconstruction
+        </h3>
+        <p>Here we show novel view synthesis results. For a GT frame (left), we reconstruct the appearance (middle), and part segmentation (right) from novel viewpoints.</p>
+        <div class="n-page video">
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/reconstruction_5s/baxter.mp4#t=0.001" type="video/mp4" />
+            </video>
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/reconstruction_5s/nao.mp4#t=0.001" type="video/mp4" />
+            </video>
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/reconstruction_5s/pandas.mp4#t=0.001" type="video/mp4" />
+            </video>
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/reconstruction_5s/zju.mp4#t=0.001" type="video/mp4" />
+            </video>
+        </div>
 
-        <!-- <video class="centered" width="100%" autoplay muted loop> -->
-        <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
-        <!-- <source src="assets/video.mp4" type="video/mp4" /> -->
-        <!-- </video> -->
+        <h3 id="repose">
+            Re-posing
+        </h3>
+        <p>Here we show re-posing results. We manually manipulate the pose from a GT frame (left), and render it from novel viewpoints (middle). These poses were never seen in training. We also show the corresponding part segmentation (right).</p>
+        <div class="n-page video">
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/repose_8s/atlas.mp4#t=0.001" type="video/mp4" />
+            </video>
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/repose_8s/cassie.mp4#t=0.001" type="video/mp4" />
+            </video>
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/repose_8s/iiwa.mp4#t=0.001" type="video/mp4" />
+            </video>
+            <video class="centered" width="100%" autoplay loop muted>
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <source src="assets/repose_8s/zju.mp4#t=0.001" type="video/mp4" />
+            </video>
+        </div>
         <h2 id="citation">
             Citation
         </h2>
@@ -154,8 +196,6 @@
         <h2 id="acknowledgments">
         </h2>
     </div>
-    <!-- <div class="n-footer">
-    </div> -->
     <center>
         <p>
             We adapted the template for this website from <a href="https://nvlabs.github.io/stylegan3/">StyleGAN3</a>.
