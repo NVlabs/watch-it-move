@@ -1,0 +1,77 @@
+#SPDX-FileCopyrightText: Copyright (c) 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+#NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+#property and proprietary rights in and to this material, related
+#documentation and any modifications thereto. Any use, reproduction,
+#disclosure or distribution of this material and related documentation
+#without an express license agreement from NVIDIA CORPORATION or
+#its affiliates is strictly prohibited.
+output_dir: ../data/output
+exp_name: atlas_merge
+
+resume_model_path: ../data/output/result/atlas/snapshot_150000.pth
+load_optimizer: false
+
+dataset:
+  data_root: "../data/robots/atlas"
+  batchsize: 16
+  size: 512
+  num_parts: 20
+  num_workers: 0  # dataloader
+  num_frames: 300
+  num_view: 5
+  coordinate_scale: 1
+  prob_sample_latest: 0.2
+  thin_out_interval: 1
+  background_color: 1
+
+network_params:
+  pixel_sampler: foreground
+  decoder_params:
+    sdf_residual_range: 0.02
+    child_root: [[-0.75, 0, 0], [0, 0.75, 0], [0, -0.75, 0],
+                 [0, 0, 0.75], [0, 0, -0.75], [0.75, 0, 0]]
+    sdf_scale: 600
+    initial_sdf_weight: 30.
+  trajectory_params:
+    dct:
+      hidden_dim: 256
+      n_mlp: 4
+      k: 30
+      n_split: 1
+  surface_loss: true
+  structure_loss: true
+  center_coef_for_structure_loss: 0.02
+
+loss_params:
+  mask_loss_multiplier: 1
+  surface_loss_coef: 400
+  structure_loss_coef: 1
+  initial_structure_loss_coef: 1
+  max_structure_loss_coef: 50
+  joint_2d_loss_coef: 1000
+  joint_3d_separation_loss_coef: 1
+  sdf_loss_coef: 0.02
+  pull_rigid_parts_loss_coef: 5
+
+train_setting:
+  num_iter: 200000
+  optimizer: AdamW
+  lr: 0.0003
+  decay: 0.005
+  clip_grad: true
+  scheduler_gamma: 0.99995
+  resume: False
+
+  val_interval: 5000
+  save_interval: 500
+  log_interval: 100
+
+  frame_schedule:
+    incremental:
+      initial_frame: 10
+      start: 10000
+      incremental_period: 70000
+
+render_setting:
+  num_ray: 384

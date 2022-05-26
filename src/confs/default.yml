@@ -1,0 +1,102 @@
+#SPDX-FileCopyrightText: Copyright (c) 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+#NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+#property and proprietary rights in and to this material, related
+#documentation and any modifications thereto. Any use, reproduction,
+#disclosure or distribution of this material and related documentation
+#without an express license agreement from NVIDIA CORPORATION or
+#its affiliates is strictly prohibited.
+output_dir:
+exp_name:
+
+fp16: false
+resume_model_path:
+load_optimizer: true
+iteration:
+
+dataset:
+  data_root: ""
+  batchsize: 4
+  size: 256
+  set_name:
+  num_parts: 24
+  num_workers: 2  # dataloader
+  n_repetition_in_epoch: 1000
+  coordinate_scale: 1500
+  num_frames:
+  num_view:
+  prob_sample_latest: 0.2
+  thin_out_interval: 1
+  background_color: -1
+  compression: True
+
+test_dataset:
+  data_root: ""
+  batchsize: 4
+  size: 256
+  num_parts: 24
+  num_workers: 2  # dataloader
+  n_repetition_in_epoch: 1
+  coordinate_scale: 1500
+
+network_params:
+  pixel_sampler: uniform
+  decoder_params:
+    hidden_dim: 256
+    n_power: 6
+    num_layers: 8
+    sdf_residual_range: 0.05
+    child_root: [ [ -0.75, 0, 0 ], [ 0, 0.75, 0 ], [ 0, -0.75, 0 ],
+                  [ 0, 0, 0.75 ], [ 0, 0, -0.75 ], [ 0.75, 0, 0 ] ]
+    sdf_scale: 100
+    initial_sdf_weight: 1.
+    residual_sdf: true
+  trajectory_params:
+    dct:
+      hidden_dim: 256
+      n_mlp: 4
+      k: 200
+      n_split: 1
+  surface_loss: false
+  structure_loss: false
+  center_coef_for_structure_loss: 0
+
+loss_params:
+  mask_loss_multiplier: 1
+  surface_loss_coef: 0
+  structure_loss_coef: 0
+  initial_structure_loss_coef: 0
+  max_structure_loss_coef: 0
+  joint_2d_loss_coef: 0
+  joint_3d_separation_loss_coef: 0
+  sdf_loss_coef: 0
+  pull_rigid_parts_loss_coef: 0
+
+train_setting:
+  num_iter: 100000
+  optimizer: Adam
+  lr: 0.001
+  decay: 0
+  clip_grad: false
+  scheduler_gamma: 1
+  resume: False
+
+  val_interval: 5000
+  save_interval: 5000
+  log_interval: 100
+
+  # for DDP
+  master_addr: localhost
+  master_port: '12355'
+  backend: nccl
+
+  dataset_schedule_type: "incremental"  # incremental
+  frame_schedule:
+    incremental:
+      initial_frame: 2932
+      start:
+      incremental_period:
+
+
+render_setting:
+  num_ray: 100

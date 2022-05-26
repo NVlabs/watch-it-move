@@ -1,0 +1,21 @@
+[submodule "data_preprocess/rgbd_dog/RGBD-Dog"]
+	path = data_preprocess/rgbd_dog/RGBD-Dog
+	url = git@github.com:CAMERA-Bath/RGBD-Dog.git
+[submodule "data_preprocess/rgbd_dog/RGBD_Dog"]
+	path = data_preprocess/rgbd_dog/RGBD_Dog
+	url = git@github.com:CAMERA-Bath/RGBD-Dog.git
+[submodule "data_preprocess/zju/AdeliDet"]
+	path = data_preprocess/zju/AdeliDet
+	url = git@github.com:aim-uofa/AdelaiDet.git
+[submodule "data_preprocess/rgbd_dog/Mask2Former"]
+	path = data_preprocess/rgbd_dog/Mask2Former
+	url = git@github.com:facebookresearch/Mask2Former.git
+[submodule "data_preprocess/zju/EasyMocap"]
+	path = data_preprocess/zju/EasyMocap
+	url = git@github.com:zju3dv/EasyMocap.git
+[submodule "AdelaiDet"]
+	path = AdelaiDet
+	url = https://github.com/aim-uofa/AdelaiDet.git
+[submodule "Mask2Former"]
+	path = Mask2Former
+	url = git@github.com:facebookresearch/Mask2Former.git

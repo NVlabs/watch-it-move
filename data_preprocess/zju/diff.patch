@@ -1,0 +1,14 @@
+diff --git a/easymocap/smplmodel/lbs.py b/easymocap/smplmodel/lbs.py
+index 4c82dd2..6cde76a 100644
+--- a/easymocap/smplmodel/lbs.py
++++ b/easymocap/smplmodel/lbs.py
+@@ -215,0 +215,5 @@ def
++    # Calculate for only the parts required for WatchItMove
++    num_rots = rot_mats.shape[1]  # Modification for WatchItMove
++    rot_mats = rot_mats[:, :num_rots]  # Modification for WatchItMove
++    J = J[:, :num_rots]  # Modification for WatchItMove
++    parents = parents[:num_rots]  # Modification for WatchItMove
+@@ -216,0 +221,3 @@ def
++    # return joint locations and transformation matrices for WatchItMove
++    if lbs_weights is None:  # Modification for WatchItMove
++        return J_transformed, A  # Modification for WatchItMove

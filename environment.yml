@@ -1,0 +1,28 @@
+name: watch_it_move
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9.12
+  - pip==22.0.4
+  - cudatoolkit=11.1.1
+  - easydict=1.9
+  - ninja=1.10.2
+  - numpy=1.21.5
+  - pytorch=1.10.1
+  - torchvision=0.11.2
+  - pip:
+      - blosc==1.10.6
+      - lpips==0.1.4
+      - matplotlib==3.5.1
+      - opencv-contrib-python==4.5.5.64
+      - opencv-python==4.5.5.64
+      - scikit-image==0.19.2
+      - smplx==0.1.28
+      - tensorboardx==2.5
+      - cython==0.29.28
+      - timm==0.5.4
+      - h5py==3.6.0
+      - submitit==1.4.2
+      - gdown==4.4.0
