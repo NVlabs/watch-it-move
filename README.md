@@ -162,7 +162,7 @@ CUDA_VISIBLE_DEVICES=[gpu_id] python train_single_video.py --config confs/[exp_n
 ```
 
 ## Pretrained Models
-Pretrained models for ZJU mocap dataset, robot dataset, and dog dataset are available [here]().
+Pretrained models for ZJU mocap dataset, robot dataset, and dog dataset are available [here](https://drive.google.com/drive/u/1/folders/1gquOrpmtXxwharcv3GoChZV6O_rcW5pw).
 The name of each directory corresponds to the name of a config fine under `src/confs`.
 Please download and place these directories in `data/output/result`.
 ```angular2html
