@@ -40,7 +40,7 @@ bash install.sh
 
 # To run the training and rendering examples below, download the data for Spot
 mkdir -p data/robots/spot
-gdown https://drive.google.com/u/1/uc\?id\=1IZyToeKhciJRtLutN5ie97I28sfhuJxB\&export\=download -O data/robots/spot/cache.pickle
+gdown https://drive.google.com/u/1/uc\?id\=1HNzCa8olJgedpKe6jBCIi-_LffLX9f8R\&export\=download -O data/robots/spot/cache.pickle
 ```
 ### Disclaimer
 We have only tested the following code on NVIDIA A100 GPUs.
@@ -50,7 +50,7 @@ We have only tested the following code on NVIDIA A100 GPUs.
 ```angular2html
 # download pretrained model for spot
 mkdir -p data/output/result/spot_merge
-gdown https://drive.google.com/u/1/uc\?id\=1v6EAJkLpbKG5rwkBAjYooCKz9YgSrm1s\&export\=download -O data/output/result/spot_merge/snapshot_latest.pth
+gdown https://drive.google.com/u/1/uc\?id\=12_K-x-daAGqvIoDd3tRvRIe0LKLOALyC\&export\=download -O data/output/result/spot_merge/snapshot_latest.pth
 
 cd <project_root>/src
 # save the reconstruction video
@@ -73,19 +73,19 @@ CUDA_VISIBLE_DEVICES=[gpu_id] python train_single_video.py --config confs/spot_m
 ## The WIM dataset
 <img src=figures/robot_example.jpg width=450px>
 
-We provide multiview videos for seven different moving robots [here](https://drive.google.com/drive/u/1/folders/1LzmXeDDfUEtZmf43X5IaS7tHqYQiCmhp) (see [LICENSE.md](LICENSE.md) for terms of use).
+We provide multiview videos for seven different moving robots [here](https://drive.google.com/drive/folders/1i5rWanA8FgVLrWPO4bl0aaGKBYwhY6IQ) (see [LICENSE.md](LICENSE.md) for terms of use).
 We provide both raw video data and preprocessed data. Please follow the instructions bellow to download and preprocess the data.
 It includes: 1000 frame videos of moving robots from 20 different viewpoints and preprocessed data of 300 frames of 5 chosen viewpoints.
 
 
 ## Dataset Preprocessing
 ### WIM Dataset
-- The WIM dataset is available [here](https://drive.google.com/drive/u/1/folders/1LzmXeDDfUEtZmf43X5IaS7tHqYQiCmhp).
-- We provide preprocessed data in the directory named [preprocessed](https://drive.google.com/drive/u/1/folders/1Cg5fPoYCaxuj9uQeqyo_C2vgaBEp4Lnd). Download, uncompress, and place it in
+- The WIM dataset is available [here](https://drive.google.com/drive/folders/1i5rWanA8FgVLrWPO4bl0aaGKBYwhY6IQ).
+- We provide preprocessed data in the directory named [preprocessed](https://drive.google.com/drive/folders/1toiwb06VggqH1FOS9OnKYlqRFk3H6T9g). Download, uncompress, and place it in
   ```angular2html
   <project_root>data/robots/<name_of_robot>/cache.pickle
   ```
-- If you run with pre-processing on your own, download tar.gz files from [here](https://drive.google.com/drive/u/1/folders/1LzmXeDDfUEtZmf43X5IaS7tHqYQiCmhp), uncompress them, place them as
+- If you run with pre-processing on your own, download tar.gz files from [here](https://drive.google.com/drive/folders/1i5rWanA8FgVLrWPO4bl0aaGKBYwhY6IQ), uncompress them, place them as
   ```
   <project_root>data/robots/<name_of_robot>/cam_<camera_id>.json
   <project_root>data/robots/<name_of_robot>/frame_<frame_id>_cam_<camera_id>.png
@@ -162,7 +162,7 @@ CUDA_VISIBLE_DEVICES=[gpu_id] python train_single_video.py --config confs/[exp_n
 ```
 
 ## Pretrained Models
-Pretrained models for ZJU mocap dataset, robot dataset, and dog dataset are available [here](https://drive.google.com/drive/u/1/folders/1gquOrpmtXxwharcv3GoChZV6O_rcW5pw).
+Pretrained models for ZJU mocap dataset, robot dataset, and dog dataset are available [here](https://drive.google.com/drive/folders/1gmkkHXRr5-1w5W-kCSHcsInMY8ODEqyK).
 The name of each directory corresponds to the name of a config fine under `src/confs`.
 Please download and place these directories in `data/output/result`.
 ```angular2html
